@@ -9,12 +9,12 @@
 
 
 ### Checklist:
-- [ ] Input fields or Rich text editors for Fragment & Vertex Shaders.
 - [ ] Option to switch between different Geometries
     - [ ] Sphere
     - [ ] Cube
     - [ ] Polygons
 - [ ] User should be able to provide necessary inputs for geometry
-- [ ] Dimensions (width, Height or radius, Number of segments)
-- [ ] Color input
+    - [ ] Dimensions (width, Height or radius, Number of segments)
+    - [ ] Color input
+- [ ] Input fields or Rich text editors for Fragment & Vertex Shaders.
 - [ ] User should be able to change the color of the canvas background.

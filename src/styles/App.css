@@ -1,0 +1,17 @@
+.App {
+  width: 90vw;
+  height: 50vh;
+  border: 2px solid red;
+}
+
+form{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 20%;
+}
+form > input {
+  width: 30%;
+}
