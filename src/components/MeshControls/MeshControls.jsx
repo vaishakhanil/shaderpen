@@ -1,30 +1,13 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React from 'react';
 import RenderScreen from '../RenderScreen/RenderScreen';
-import {RenderSettings} from '../RenderSettings/RenderSettings'
+import {RenderSettings} from '../RenderSettings/RenderSettings';
 
-import {MeshContext} from '../../context/mesh_context'
-
-const MeshControls = () => {
-    const [meshType] = useContext(MeshContext);
-    const [size,setSize] = useState(1);
-    const handle_change = (e) => {
-        setSize(e.target.value)
-    }
-
-    useEffect(() => {
-        console.log(meshType);
-    }, [meshType])
-
+export const MeshControls = (size) => {
     return(
         <>
-        <RenderScreen size={size}>
-            <RenderSettings/>
-        </RenderScreen>
-            <div>
-                <input type="range" min="1" max="11" onChange={handle_change}/>
-            </div>
+            <RenderScreen value={size}>
+                <RenderSettings/>
+            </RenderScreen>  
         </>
     )
 }
-
-export default MeshControls

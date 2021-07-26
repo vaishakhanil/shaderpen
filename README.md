@@ -18,3 +18,4 @@
     - [ ] Color input
 - [ ] Input fields or Rich text editors for Fragment & Vertex Shaders.
 - [ ] User should be able to change the color of the canvas background.
+- [ ] Build the UI

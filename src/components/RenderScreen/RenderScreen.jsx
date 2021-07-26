@@ -5,15 +5,14 @@ import MeshComponent from '../MeshComponent/MeshComponent';
 import {MeshContext} from '../../context/mesh_context'
 
 
-const RenderScreen = props => {
+const RenderScreen = (props ) => {
     const [meshType] = useContext(MeshContext);
     const [geometry, setGeometry] = useState(<boxGeometry args={[1,1,1]}/>)
-    let size = props.size;
     
     useEffect(() => {
         switch(meshType){
             case "cube": {
-                            setGeometry(<boxGeometry args={[size,1,1]}/>);
+                            setGeometry(<boxGeometry args={[props.value.size.width,1,1]}/>);
                             break;
                         }
 
@@ -38,7 +37,8 @@ const RenderScreen = props => {
                         }
             default: setGeometry(<boxGeometry args={[1,1,1]}/>);
         }
-    },[meshType,size])
+        console.log(props.value.size)
+    },[meshType,props.value])
 
     return(
         <>

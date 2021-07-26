@@ -1,1 +1,1 @@
-export {default} from './MeshControls';
+export {default} from './Controls';

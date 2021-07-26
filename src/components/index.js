@@ -3,4 +3,4 @@ export {default as MeshComponent} from './MeshComponent';
 
 export {default as MeshContextSet} from './MeshContextSet';
 
-export {default as MeshControls} from './MeshControls';
+export {default as Controls} from './MeshControls';
