@@ -7,7 +7,7 @@ import {MeshContext} from '../../context/mesh_context'
 
 const RenderScreen = (props ) => {
     const [meshType] = useContext(MeshContext);
-    const [geometry, setGeometry] = useState(<boxGeometry args={[1,1,1]}/>)
+    const [geometry, setGeometry] = useState(<sphereGeometry args={[50,50,50]}/>)
     const dimensions = props.value.size;
     useEffect(() => {
         switch(meshType){
@@ -43,7 +43,8 @@ const RenderScreen = (props ) => {
     return(
         <>
             <div className="App">
-                <Canvas>
+                <Canvas camera={{position: [0,0,50]}}>
+                    <color attach="background" args={["#f2f2f2"]} />
                     {props.children}
                     <MeshComponent geometry={geometry}/>
                 </Canvas>

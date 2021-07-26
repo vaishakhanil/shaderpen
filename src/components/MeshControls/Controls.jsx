@@ -1,15 +1,15 @@
 import React, {useState,useEffect, useContext} from 'react';
 import {MeshContext} from '../../context/mesh_context';
 import {MeshControls} from './MeshControls';
-
+import CodeEditor from '../CodeEditor/CodeEditor'
 
 const Controls = () => {
     const [meshType] = useContext(MeshContext);
     const [fields, setFields] = useState({
-        width: 1,
-        height: 1,
-        depth: 1,
-        radius: 1,
+        width: 30,
+        height: 20,
+        depth: 20,
+        radius: 20,
         widthSegments: 32,
         heightSegments: 32,
         radialSegments: 32,
@@ -32,62 +32,122 @@ const Controls = () => {
         switch(type){
             case "cube": {
                 return(
-                    <form>
+                    <>  
                         <div>
-                            <input type="range" name="width" id="width" min="1" max="5" onChange={handle_change}/> 
-                            <input type="number" name="width" id="width" value={fields.width} onChange={handle_change} />
+                            <label>Width</label>
+                            <input type="range" name="width" id="width" min="10" max="50" onChange={handle_change}/> 
+                            <input type="number" name="width" id="widthNum" value={fields.width} onChange={handle_change} />
                         </div>
-                        
-                        <input type="range" name="height" id="height" min="1" max="5" onChange={handle_change}/> 
-                        <input type="range" name="depth" id="depth" min="1" max="5" onChange={handle_change}/>
-                    </form>
+                        <div>
+                            <label>Height</label>
+                            <input type="range" name="height" id="height" min="10" max="50" onChange={handle_change}/>
+                            <input type="number" name="height" id="heightNum" value={fields.height} onChange={handle_change} /> 
+                        </div>
+                        <div>
+                            <label>Depth</label>
+                            <input type="range" name="depth" id="depth" min="10" max="50" onChange={handle_change}/>
+                            <input type="number" name="depth" id="depthNum" value={fields.depth} onChange={handle_change} />
+                        </div>
+                    </>
                 );
             }
             case "sphere": {
                 return(
-                    <form>
-                        <input type="range" name="radius" id="radius" min="2" max="10" onChange={handle_change}/>
-                        <input type="range" name="widthSegments" id="widthSegments" min="1" max="20" onChange={handle_change}/>
-                        <input type="range" name="heightSegments" id="heightSegments" min="1" max="20" onChange={handle_change}/>
-                    </form>
+                    <>
+                        <div>
+                            <label>Radius</label>
+                            <input type="range" name="radius" id="radius" min="10" max="30" onChange={handle_change}/>
+                            <input type="number" name="radius" id="radiusNum" value={fields.radius} onChange={handle_change} />
+                        </div>
+                        <div>
+                            <label>Width Segments</label>
+                            <input type="range" name="widthSegments" id="widthSegments" min="10" max="50" onChange={handle_change}/>
+                            <input type="number" name="widthSegments" id="widthSegmentNum" value={fields.widthSegments} onChange={handle_change} />
+                        </div>
+                        <div>
+                            <label>Height Segments</label>
+                            <input type="range" name="heightSegments" id="heightSegments" min="10" max="50" onChange={handle_change}/>
+                            <input type="number" name="heightSegments" id="heightSegmentsNum" value={fields.heightSegments} onChange={handle_change} />
+                        </div>
+                    </>
                 );
             }
             case "cone": {
                 return(
-                    <form>
-                        <input type="range" name="radius" id="radius" min="1" max="5" onChange={handle_change}/>
-                        <input type="range" name="height" id="height" min="1" max="5" onChange={handle_change}/>
-                        <input type="range" name="radialSegments" id="radialSegments" min="4" max="20" onChange={handle_change}/>
-                        <input type="range" name="heightSegments" id="heightSegments" min="3" max="20" onChange={handle_change}/>
-                    </form>
+                    <>
+                        <div>
+                            <label>Radius</label>
+                            <input type="range" name="radius" id="radius" min="10" max="50" onChange={handle_change}/>
+                            <input type="number" name="radius" id="radiusNum1" value={fields.radius} onChange={handle_change} />
+                        </div>
+                        <div>
+                            <label>Height</label>
+                            <input type="range" name="height" id="height" min="10" max="50" onChange={handle_change}/>
+                            <input type="number" name="height" id="heightNum" value={fields.height} onChange={handle_change} />
+                        </div>
+                        <div>
+                            <label>Radial Segment</label>
+                            <input type="range" name="radialSegments" id="radialSegments" min="4" max="20" onChange={handle_change}/>
+                            <input type="number" name="radialSegments" id="radialNum" value={fields.radialSegments} onChange={handle_change} />
+                        </div>
+                        <div>
+                            <label>Height Segments</label>
+                            <input type="range" name="heightSegments" id="heightSegments" min="3" max="20" onChange={handle_change}/>
+                            <input type="number" name="heightSegments" id="heightSegmentsNum" value={fields.heightSegments} onChange={handle_change} />
+                        </div>
+                    </>
                 )
             }
             case "cylinder": {
                 return(
-                    <form>
-                        <input type="range" name="radius" id="radius" min="1" max="5" onChange={handle_change}/>
-                        <input type="range" name="height" id="height" min="1" max="5" onChange={handle_change}/>
-                        <input type="range" name="radialSegments" id="radialSegments" min="5" max="20" onChange={handle_change}/>
-                        <input type="range" name="heightSegments" id="heightSegments" min="2" max="20" onChange={handle_change}/>
-                    </form>
+                    <>
+                        <div>
+                            <label>Radius</label>
+                            <input type="range" name="radius" id="radius" min="10" max="50" onChange={handle_change}/>
+                            <input type="number" name="radius" id="radiusNum" value={fields.radius} onChange={handle_change} />
+                        </div>
+                        <div>
+                            <label>Height</label>
+                            <input type="range" name="height" id="height" min="10" max="50" onChange={handle_change}/>
+                            <input type="number" name="height" id="heightNum" value={fields.height} onChange={handle_change} />
+                        </div>
+                        <div>
+                            <label>Radial Segments</label>
+                            <input type="range" name="radialSegments" id="radialSegments" min="5" max="20" onChange={handle_change}/>
+                            <input type="number" name="radialSegments" id="radialSegmentsNum" value={fields.radialSegments} onChange={handle_change} />
+                        </div>
+                        <div>
+                            <label>Height Segments</label>
+                            <input type="range" name="heightSegments" id="heightSegments" min="2" max="20" onChange={handle_change}/>
+                            <input type="number" name="heightSegments" id="heightSegmentsNum" value={fields.heightSegments} onChange={handle_change} />
+                        </div>
+                    </>
                 )
             }
             case "icosahedron":{
                 return(
-                    <form>
-                        <input type="range" name="radius" id="radius" min="1" max="5" onChange={handle_change}/>
-                    </form>
+                    <div>
+                        <label>Radius</label>
+                        <input type="range" name="radius" id="radius" min="10" max="50" onChange={handle_change}/>
+                        <input type="number" name="radius" id="radiusNum" value={fields.radius} onChange={handle_change} />
+                    </div>
                 )
             }
+            default: return("");
         }
     }
 
     return(
-        <>
-            <MeshControls size={fields}/>
-
-            {handle_controller_type(meshType)}
-        </>
+        <div className="renderView">
+            <CodeEditor/>
+            <div className="renderRegion">
+                <MeshControls size={fields}/>
+                <form>
+                    <h2>{(meshType).toUpperCase()}</h2>
+                    {handle_controller_type(meshType)}
+                </form>
+            </div>
+        </div>
     )
 }
 

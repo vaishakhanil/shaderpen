@@ -1,8 +1,13 @@
 *{
   margin:0;
   padding:0;
+  font-family: 'Roboto';
 }
 body {
+  
+  background: #171718;
+  color: white;
+  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +15,62 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+h2{
+  font-size: 1.5vw;
+}
+
+nav{
+  width: 100vw;
+  height: 10vh;
+  background: #131318;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shapes{
+  width: 70%;
+  margin-left: 2vw;
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.runButton{
+  position:fixed;
+  bottom: 78%;
+  right: 50%;
+  margin-right: 4vw;
+}
+
+button{
+  padding: 1vw 2vw;
+  background-color: #111114;
+  border: 0;
+  color: white;
+  font-size: 1.5vw;
+  
+  transition: color 250ms ease-in-out;
+}
+button:hover{
+  cursor: pointer;
+  color: rgb(255, 251, 5);
+}
+
+button > svg{
+  width: 1.5vw;
+  height: 1.5vw;
+  margin-left: 1vw;
+  transform: translateY(0.25vw);
+  pointer-events: none;
+}
+a{
+  text-decoration: none;
+  width:100vw;
+  font-weight: 200;
+  position: fixed;
+  bottom: 0;
+  color: white;
+  text-align: center;
 }

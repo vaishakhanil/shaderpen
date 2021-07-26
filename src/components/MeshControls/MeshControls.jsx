@@ -4,10 +4,10 @@ import {RenderSettings} from '../RenderSettings/RenderSettings';
 
 export const MeshControls = (size) => {
     return(
-        <>
+        <div>
             <RenderScreen value={size}>
                 <RenderSettings/>
             </RenderScreen>  
-        </>
+        </div>
     )
 }
