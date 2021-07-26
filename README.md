@@ -1,6 +1,6 @@
 <h1 align="center">
     <br/>
-    <a href="https://vaishakhanil.github.io/"><img width="220px" src="./public/favicon.ico" alt="shaderpen-Logo"/></a>
+    <a href="https://vaishakhanil.github.io/"><img width="150px" src="./public/favicon.ico" alt="shaderpen-Logo"/></a>
     <br/>
 </h1>
 
