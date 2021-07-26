@@ -8,37 +8,37 @@ import {MeshContext} from '../../context/mesh_context'
 const RenderScreen = (props ) => {
     const [meshType] = useContext(MeshContext);
     const [geometry, setGeometry] = useState(<boxGeometry args={[1,1,1]}/>)
-    
+    const dimensions = props.value.size;
     useEffect(() => {
         switch(meshType){
             case "cube": {
-                            setGeometry(<boxGeometry args={[props.value.size.width,1,1]}/>);
+                            setGeometry(<boxGeometry args={[dimensions.width,dimensions.height,dimensions.depth]}/>);
                             break;
                         }
 
             case "sphere": {
-                            setGeometry(<sphereGeometry args={[1,5,5]}/>);
+                            setGeometry(<sphereGeometry args={[dimensions.radius,dimensions.widthSegments,dimensions.heightSegments]}/>);
                             break;
                         }
 
             case "cone": {
-                            setGeometry(<coneGeometry args={[1,3,3]}/>);
+                            setGeometry(<coneGeometry args={[dimensions.radius,dimensions.height,dimensions.radialSegments,dimensions.heightSegments]}/>);
                             break;
                         }
 
             case "cylinder": {
-                            setGeometry(<cylinderGeometry args={[1,1,4,4]}/>);
+                            setGeometry(<cylinderGeometry args={[dimensions.radius,dimensions.radius,dimensions.height,dimensions.radialSegments,dimensions.heightSegments]}/>);
                             break;
                         }
 
             case "icosahedron": {
-                            setGeometry(<icosahedronGeometry args={[1,0]}/>);
+                            setGeometry(<icosahedronGeometry args={[dimensions.radius,0]}/>);
                             break;
                         }
             default: setGeometry(<boxGeometry args={[1,1,1]}/>);
         }
-        console.log(props.value.size)
-    },[meshType,props.value])
+        // console.log(props.value)
+    },[meshType,dimensions])
 
     return(
         <>

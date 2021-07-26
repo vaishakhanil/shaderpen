@@ -13,9 +13,10 @@
     - [x] Sphere
     - [x] Cube
     - [x] Polygons
-- [ ] User should be able to provide necessary inputs for geometry
-    - [ ] Dimensions (width, Height or radius, Number of segments)
-    - [ ] Color input
+- [x] User should be able to provide necessary inputs for geometry
+    - [x] Dimensions (width, Height or radius, Number of segments)
 - [ ] Input fields or Rich text editors for Fragment & Vertex Shaders.
-- [ ] User should be able to change the color of the canvas background.
+- [ ] Main Settings
+    - [ ] User should be able to change the color of the canvas background.
+    - [ ] User should be able to change the angle of direction light
 - [ ] Build the UI
