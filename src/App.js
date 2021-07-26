@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/App.css';
 
-import {Controls, MeshContextSet, CodeEditor} from './components';
+import {Controls, MeshContextSet} from './components';
 
 import {MeshContextProvider} from './context/mesh_context';
 
