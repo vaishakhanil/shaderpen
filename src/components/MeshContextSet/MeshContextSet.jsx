@@ -9,7 +9,7 @@ import {ReactComponent as Poly} from '../../assets/svg/poly.svg'
 
 
 const MeshContextSet = () => {
-    const [,setMeshType] = useContext(MeshContext);
+    const [meshType,setMeshType] = useContext(MeshContext);
 
     const change_mesh = (e) => {
         e.preventDefault()

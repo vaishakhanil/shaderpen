@@ -7,7 +7,7 @@ import {MeshContext} from '../../context/mesh_context'
 
 const RenderScreen = (props ) => {
     const [meshType] = useContext(MeshContext);
-    const [geometry, setGeometry] = useState(<sphereGeometry args={[50,50,50]}/>)
+    const [geometry, setGeometry] = useState();
     const dimensions = props.value.size;
     useEffect(() => {
         switch(meshType){

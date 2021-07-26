@@ -6,9 +6,9 @@ const MeshComponent = ({geometry}) => {
     const myMesh = useRef(null);
 
     useEffect(() =>{setGeo(geometry)},[geometry]);
-    useFrame(({ clock }) => {
-        myMesh.current.rotation.y = clock.getElapsedTime();
-    })
+    // useFrame(({ clock }) => {
+    //     myMesh.current.rotation.y = clock.getElapsedTime();
+    // })
   
     const fragmentShader = `varying vec3 vUv;
     void main() {

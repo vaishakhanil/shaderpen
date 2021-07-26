@@ -5,28 +5,27 @@ import CodeEditor from '../CodeEditor/CodeEditor'
 
 const Controls = () => {
     const [meshType] = useContext(MeshContext);
-    const [fields, setFields] = useState({
-        width: 30,
-        height: 20,
-        depth: 20,
-        radius: 20,
-        widthSegments: 32,
-        heightSegments: 32,
-        radialSegments: 32,
-        detail: 0,
-    });
+    // const [fields, setFields] = useState({
+    //     width: 30,
+    //     height: 20,
+    //     depth: 20,
+    //     radius: 20,
+    //     widthSegments: 32,
+    //     heightSegments: 32,
+    //     radialSegments: 32,
+    //     detail: 0,
+    // });
 
-    useEffect(() => {
-        console.log(meshType);
-    }, [meshType])
+    const [fields, setFields] = useState({})
 
     const handle_controller_type = (type) => {
-
         const handle_change = (event) => {
+            const key = event.target.name
+            const value = event.target.value 
             setFields({
-                ...fields,
-                [event.target.name]: event.target.value
+                [key]: value
             })
+            console.log(fields);
         }
 
         switch(type){
