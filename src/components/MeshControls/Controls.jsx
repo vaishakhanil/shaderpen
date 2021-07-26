@@ -1,28 +1,27 @@
-import React, {useState,useEffect, useContext} from 'react';
+import React, {useState, useContext} from 'react';
 import {MeshContext} from '../../context/mesh_context';
 import {MeshControls} from './MeshControls';
 import CodeEditor from '../CodeEditor/CodeEditor'
 
 const Controls = () => {
     const [meshType] = useContext(MeshContext);
-    // const [fields, setFields] = useState({
-    //     width: 30,
-    //     height: 20,
-    //     depth: 20,
-    //     radius: 20,
-    //     widthSegments: 32,
-    //     heightSegments: 32,
-    //     radialSegments: 32,
-    //     detail: 0,
-    // });
-
-    const [fields, setFields] = useState({})
+    const [fields, setFields] = useState({
+        width: 30,
+        height: 20,
+        depth: 20,
+        radius: 20,
+        widthSegments: 32,
+        heightSegments: 32,
+        radialSegments: 32,
+        detail: 0,
+    });
 
     const handle_controller_type = (type) => {
         const handle_change = (event) => {
             const key = event.target.name
             const value = event.target.value 
             setFields({
+                ...fields,
                 [key]: value
             })
             console.log(fields);
