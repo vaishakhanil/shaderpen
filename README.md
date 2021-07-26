@@ -9,10 +9,10 @@
 
 
 ### Checklist:
-- [ ] Option to switch between different Geometries
-    - [ ] Sphere
-    - [ ] Cube
-    - [ ] Polygons
+- [x] Option to switch between different Geometries
+    - [x] Sphere
+    - [x] Cube
+    - [x] Polygons
 - [ ] User should be able to provide necessary inputs for geometry
     - [ ] Dimensions (width, Height or radius, Number of segments)
     - [ ] Color input
