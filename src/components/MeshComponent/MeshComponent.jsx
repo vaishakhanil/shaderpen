@@ -1,6 +1,6 @@
 import React,{useState, useEffect, useRef, useContext} from 'react';
 import {useFrame} from '@react-three/fiber'
-let a = 1
+let a = 1 ; // key to rerender the canvas
 
 const MeshComponent = ({geometry,shaders}) => {
     const [geo,setGeo] = useState();
@@ -34,7 +34,6 @@ const MeshComponent = ({geometry,shaders}) => {
             vertexShader: shaders.vertexShader
         })
         a++;
-        console.log(shaders);
     },[shaders])
 
     useEffect(() =>{setGeo(geometry);},[geometry]);
