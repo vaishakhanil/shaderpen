@@ -1,20 +1,22 @@
-import React,{useState, useEffect, useRef} from 'react';
+import React,{useState, useEffect, useRef, useContext} from 'react';
 import {useFrame} from '@react-three/fiber'
+let a = 1
 
-const MeshComponent = ({geometry}) => {
+const MeshComponent = ({geometry,shaders}) => {
     const [geo,setGeo] = useState();
     const myMesh = useRef(null);
+   
 
-    useEffect(() =>{setGeo(geometry); console.log(geometry)},[geometry]);
-    useFrame(({ clock }) => {
-        myMesh.current.rotation.y = clock.getElapsedTime();
-    })
-  
-    const fragmentShader = `varying vec3 vUv;
-    void main() {
-      gl_FragColor = vec4(tan(vUv.x+vUv.y),tan(vUv.x+vUv.y),tan(vUv.x+vUv.y), 0.8);
-    }`
-    const vertexShader = ` uniform float time;
+    const [shaderObject, setShaderObject] = useState({
+        fragmentShader: `varying vec3 vUv;
+        void main() {
+          gl_FragColor = vec4(
+              tan(vUv.x+vUv.y),
+              tan(vUv.x+vUv.y),
+              tan(vUv.x+vUv.y),
+               0.8);
+        }`,
+        vertexShader : ` uniform float time;
     varying vec3 vUv; 
         void main(void) {
           vec3 nPos = position;
@@ -24,12 +26,28 @@ const MeshComponent = ({geometry}) => {
           gl_Position = projectionMatrix * modelViewMatrix * vec4(nPos, 1.0);
         }`
 
+    })
+
+    useEffect(() => {
+        setShaderObject({
+            fragmentShader: shaders.fragmentShader,
+            vertexShader: shaders.vertexShader
+        })
+        a++;
+        console.log(shaders);
+    },[shaders])
+
+    useEffect(() =>{setGeo(geometry);},[geometry]);
+    useFrame(({ clock }) => {
+        myMesh.current.rotation.y = clock.getElapsedTime();
+    })
+
     
     return(
         <mesh ref={myMesh}>
             {geo}
             {/* <meshStandardMaterial/> */}
-            <shaderMaterial attach="material"  fragmentShader={fragmentShader} vertexShader={vertexShader} />
+            <shaderMaterial key={a} attach="material" args={[shaderObject]}/>
         </mesh>
     )
 }

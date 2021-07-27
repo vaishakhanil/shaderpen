@@ -3,6 +3,9 @@ import {MeshContext} from '../../context/mesh_context';
 import {MeshControls} from './MeshControls';
 import CodeEditor from '../CodeEditor/CodeEditor'
 
+import {ShaderContextProvider} from '../../context/shader_context';
+
+
 const Controls = () => {
     const [meshType] = useContext(MeshContext);
     const [fields, setFields] = useState({
@@ -24,7 +27,6 @@ const Controls = () => {
                 ...fields,
                 [key]: value
             })
-            console.log(fields);
         }
 
         switch(type){
@@ -137,7 +139,8 @@ const Controls = () => {
 
     return(
         <div className="renderView">
-            <CodeEditor/>
+            <ShaderContextProvider>
+                <CodeEditor/>
             <div className="renderRegion">
                 <MeshControls size={fields}/>
                 <form>
@@ -145,6 +148,7 @@ const Controls = () => {
                     {handle_controller_type(meshType)}
                 </form>
             </div>
+            </ShaderContextProvider>
         </div>
     )
 }

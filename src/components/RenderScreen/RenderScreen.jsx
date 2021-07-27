@@ -46,7 +46,7 @@ const RenderScreen = (props ) => {
                 <Canvas camera={{position: [0,0,50]}}>
                     <color attach="background" args={["#f2f2f2"]} />
                     {props.children}
-                    <MeshComponent geometry={geometry}/>
+                    <MeshComponent geometry={geometry} shaders={props.shaders}/>
                 </Canvas>
             </div>
         </>
