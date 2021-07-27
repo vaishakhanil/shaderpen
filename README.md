@@ -28,7 +28,7 @@ ShaderPen is a simple shader visualizer built in React. The web app consists of 
     - [x] Polygons
 - [x] User should be able to provide necessary inputs for geometry
     - [x] Dimensions (width, Height or radius, Number of segments)
-- [ ] Input fields or Rich text editors for Fragment & Vertex Shaders.
+- [x] Input fields or Rich text editors for Fragment & Vertex Shaders.
 - [ ] Main Settings
     - [ ] User should be able to change the color of the canvas background.
     - [ ] User should be able to change the angle of direction light.
