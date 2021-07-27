@@ -10,6 +10,9 @@
 ![ThreeJS](https://img.shields.io/badge/threejs-1ee500?logo=webgl&style=flat-square&logoColor=white)
 ![R3F](https://img.shields.io/badge/R3F-1752EC?logo=webgl&style=flat-square&logoColor=white)
 
+
+![shaderpen-gif](https://res.cloudinary.com/vaishakhanil/image/upload/v1627385529/githubImages/ui-shaderpen-min_qojnij.gif)
+
 ### About ShaderPen:
 
 ShaderPen is a simple shader visualizer built in React. The web app consists of two code editors for Fragment Shader and Vertex Shader. Users can change the dimensions as well as its fragment & vertex shader codes to test and explore custom shaders.
