@@ -11,7 +11,7 @@
 ![R3F](https://img.shields.io/badge/R3F-1752EC?logo=webgl&style=flat-square&logoColor=white)
 
 
-![shaderpen-gif](https://res.cloudinary.com/vaishakhanil/image/upload/v1627385529/githubImages/ui-shaderpen-min_qojnij.gif)
+![shaderpen-gif](https://res.cloudinary.com/vaishakhanil/image/upload/v1627386620/githubImages/ezgif.com-gif-maker_1_thciwd.gif)
 
 ### About ShaderPen:
 
